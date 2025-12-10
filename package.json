@@ -4,16 +4,13 @@
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@10.23.0",
-  "engines": {
-    "node": ">=20.0.0",
-    "pnpm": ">=10.23.0"
-  },
+
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=\"--max-old-space-size=8192\" next dev --webpack",
     "dev:turbo": "cross-env NODE_OPTIONS=\"--max-old-space-size=8192\" next dev --turbopack",
     "dev:webpack": "cross-env NODE_OPTIONS=\"--max-old-space-size=8192\" next dev",
     "dev:debug": "cross-env NODE_OPTIONS=\"--max-old-space-size=8192 --inspect\" next dev --turbopack",
-    "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=8192\" next build",
+  "build": "pnpm db:push && next build",
     "build:analyze": "cross-env ANALYZE=true NODE_OPTIONS=\"--max-old-space-size=8192\" next build",
     "build:production": "pnpm clean && cross-env NODE_OPTIONS=\"--max-old-space-size=8192\" next build",
     "start": "next start",
